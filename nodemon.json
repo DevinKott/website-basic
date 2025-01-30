@@ -1,0 +1,11 @@
+{
+    "watch": [
+        "*.hbs",
+        "*.json"
+    ],
+    "ignore": [
+        "package.json",
+        "nodemon.json"
+    ],
+    "ext": "hbs,json"
+}

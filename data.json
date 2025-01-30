@@ -1,0 +1,41 @@
+{
+    "firstName": "Devin",
+    "lastName": "Kott",
+    "location": "Denver, Colorado",
+    "year": "2025",
+    "professionalSummary": "Software Engineer with 6 years of experience designing and developing API-driven services for cloud environments. Proficient in C#, Docker, and Bash scripting with prior experience in Python, JavaScript/Node.js/React, and C++. Passionate about building robust, reliable, and secure software while striving to be adaptable to any situation.",
+    "schoolName": "Rochester Institute of Technology",
+    "jobs": [
+        {
+            "title": "Software Engineer (Remote)",
+            "company": "Kodak Alaris",
+            "startDate": "2021-06-02",
+            "endDate": "",
+            "responsibilities": [
+                "Lead developer on a technology transformation team, designing and implementing containerized C# microservices on Linux to replace legacy systems and modernize product commercialization for multiple business units. Delivering scalable, maintainable, and future-proof solutions that align with long-term business goals.",
+                "Led a 3-developer team in designing and implementing a 12-month proof-of-concept kiosk architecture, showcasing the advantages of modern technology over legacy systems. The success of the project led to the creation of a new technology transformation team to refactor all product lines.",
+                "Integrated Azure Application Insights into kodakmoments.com, providing real-time monitoring and analytics for managers and developers. Leveraged insights to improve site reliability, robustness, and response times."
+            ]
+        },
+        {
+            "title": "Software Engineer Co-op",
+            "company": "Kodak Alaris",
+            "startDate": "2019-05-02",
+            "endDate": "2021-02-02",
+            "responsibilities": [
+                "Co-developed photo kiosk software proof-of-concepts for low-powered IoT devices, prompting the business to further research Linux and Docker as a new technology platform.",
+                "Developed an Arduino LED array hardware and software integration for trial kiosk units, including animation tools for UI/UX teams and Azure IoT integration for operational efficiency.",
+                "Researched and developed infrared hand-tracking software to enable touchless workflows for existing kiosks, enhancing user interaction and accessibility."
+            ]
+        },
+        {
+            "title": "Software Engineer Co-op",
+            "company": "Xerox",
+            "startDate": "2018-01-02",
+            "endDate": "2018-08-02",
+            "responsibilities": [
+                "Refactored legacy printer simulator software from Java to C++14, improving performance, build times, and maintainability, which increased developer efficiency across multiple teams."
+            ]
+        }
+    ]
+}

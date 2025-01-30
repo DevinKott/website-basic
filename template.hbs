@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portfolio of {{firstName}} {{lastName}}, Web Developer">
+        <meta name="robots" content="index, follow">
+        <title>{{firstName}} {{lastName}}</title>
+        <style>
+            body {
+                line-height: 1.5;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            a:hover, a:focus {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>I'm {{firstName}} {{lastName}}, a software developer from {{location}}</h1>
+            <p>{{professionalSummary}}</p>
+        </header>
+        <main>
+            <section>
+                <h2>Work</h2>
+                <p>
+                    <span>Total Industry Experience:</span> <span id="total-experience"></span> years
+                </p>
+                {{#each jobs}}
+                <article>
+                    <h3>{{title}}, {{company}}</h3>
+                    <p aria-label="Job Duration">
+                        <time datetime="{{startDate}}" aria-label="Started on {{startDate}}"></time> -
+                        {{#if endDate}}<time datetime="{{endDate}}" aria-label="Ended on {{endDate}}"></time>{{else}}Present{{/if}}, 
+                        <span class="duration" data-start="{{startDate}}" data-end="{{endDate}}"></span>
+                    </p>
+                    {{#if responsibilities.length}}
+                    <ul aria-label="Job Responsibilities">
+                        {{#each responsibilities}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </article>
+                {{/each}}
+            </section>
+            <section>
+                <h2>Education</h2>
+                <ul aria-label="Educational Degrees">
+                    <li>Master of Science in Computer Science, {{schoolName}}, 2021</li>
+                    <li>Bachelor of Science in Computer Science, {{schoolName}}, 2020, Magna Cum Laude</li>
+                </ul>
+            </section>
+        </main>
+        <footer role="contentinfo" style="margin-top: 2rem;">
+            <p>
+                &copy; {{year}} {{firstName}} {{lastName}}
+                <span aria-hidden="true">|</span> Built with <a href="https://handlebarsjs.com/" target="_blank" rel="noopener noreferrer">Handlebars</a>
+                <span aria-hidden="true">|</span> Hosted on <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">AWS</a>
+                <span aria-hidden="true">|</span>
+                <a href="humans.txt" aria-label="View the humans.txt file">humans</a>
+                <span aria-hidden="true">|</span>
+                <a href="robots.txt" aria-label="View the robots.txt file">robots</a>
+            </p>
+        </footer>
+        <script>
+            function calculateJobDuration() {
+                const dateFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short' });
+
+                const calculateMonths = (startDate, endDate) => {
+                    const start = new Date(startDate);
+                    const end  = endDate ? new Date(endDate) : new Date();
+                    return (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+                };
+
+                let totalMonths = 0;
+                document.querySelectorAll('.duration').forEach(
+                    element => {
+                        const jobMonths = calculateMonths(
+                            element.getAttribute('data-start'),
+                            element.getAttribute('data-end')
+                        ) + 1;
+
+                        totalMonths += jobMonths;
+                        const years = Math.floor(jobMonths / 12);
+                        const months = jobMonths % 12;
+                        element.textContent = years ? `${years} yrs ${months} mos` : `${months} mos`;
+                    }
+                );
+
+                document.getElementById("total-experience").textContent = (totalMonths / 12).toFixed(1);
+
+                document.querySelectorAll('time').forEach(
+                    timeElement => {
+                        const date = new Date(timeElement.getAttribute('datetime'));
+                        timeElement.textContent = dateFormatter.format(date);
+                    }
+                );
+            }
+
+            document.addEventListener('DOMContentLoaded', calculateJobDuration);
+        </script>
+    </body>
+</html>

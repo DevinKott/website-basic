@@ -1,17 +1,27 @@
 # website-basic
 
-HTML &amp; CSS only personal site
+HTML-only personal site, built with handlebars.
 
 ## Usage
 
 Install dependencies for building:
 
 ```
-$ npm install -g gulp gulp-htmlmin gulp-clean-css --save-dev
+$ npm install
 ```
 
-Build everything:
+**_Compiling_**
 
 ```
-$ gulp
+$ npm run render
 ```
+
+**_Live Development_**
+
+```
+$ npm run watch
+```
+
+## TODO
+
+1. Automatically pull from [ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt) every so often?
