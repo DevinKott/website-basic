@@ -1,5 +1,6 @@
 const fs = require("fs").promises;
 const Handlebars = require("handlebars");
+const minify = require('html-minifier').minify;
 
 async function renderTemplate(templatePath, dataPath, outputPath) {
     try {
@@ -13,7 +14,34 @@ async function renderTemplate(templatePath, dataPath, outputPath) {
         const jsonData = JSON.parse(await fs.readFile(dataPath, "utf-8"));
 
         // Render template w/ data
-        const outputHtml = template(jsonData);
+        let outputHtml = template(jsonData);
+
+        // Minify
+        outputHtml = minify(
+            outputHtml,
+            {
+                collapseBooleanAttributes: true,
+                collapseWhitespace: true,
+                decodeEntities: true,
+                html5: true,
+                minifyCSS: true,
+                minifyJS: true,
+                processConditionalComments: true,
+                processScripts: ["text/html"],
+                removeAttributeQuotes: true,
+                removeComments: true,
+                removeEmptyAttributes: true,
+                removeOptionalTags: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                removeTagWhitespace: true, // Might result in invalid HTML
+                sortAttributes: true,
+                sortClassName: true,
+                trimCustomFragments: true,
+                useShortDoctype: true
+            }
+        );
 
         // Write output to file
         await fs.writeFile(outputPath, outputHtml);
