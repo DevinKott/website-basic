@@ -1,6 +1,7 @@
 {
     "firstName": "Devin",
     "lastName": "Kott",
+    "SiteDescription": "Portfolio of Devin Kott, Software Developer",
     "location": "Denver, Colorado",
     "year": "2025",
     "professionalSummary": "Software Engineer with 6 years of experience designing and developing API-driven services for cloud environments. Proficient in C#, Docker, and Bash scripting with prior experience in Python, JavaScript/Node.js/React, and C++. Passionate about building robust, reliable, and secure software while striving to be adaptable to any situation.",
