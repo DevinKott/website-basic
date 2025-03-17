@@ -2,7 +2,7 @@
     "scripts": {
         "render": "node render.js",
         "watch": "nodemon render.js",
-        "build": "rm -rf ./dist && mkdir -p ./dist && node render.js template.hbs data.json ./dist/index.html && cp robots.txt ./dist && cp humans.txt ./dist"
+        "build": "rm -rf ./dist && mkdir -p ./dist && node render.js template.hbs data.json ./dist/index.html && cp ./assets/* ./dist"
     },
     "dependencies": {
         "handlebars": "^4.7.8",
