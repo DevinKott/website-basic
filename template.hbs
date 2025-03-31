@@ -6,19 +6,19 @@
         <meta name="robots" content="index, follow">
 
         <!-- HTML Meta Tags -->
-        <title>{{firstName}} {{lastName}}</title>
+        <title>{{SiteTitle}}</title>
         <meta name="description" content="{{SiteDescription}}">
 
         <!-- Facebook Meta Tags -->
         <meta property="og:url" content="https://devinkott.com">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Devin Kott">
+        <meta property="og:title" content="{{SiteTitle}}">
         <meta property="og:description" content="{{SiteDescription}}">
 
         <!-- Twitter Meta Tags -->
         <meta property="twitter:domain" content="devinkott.com">
         <meta property="twitter:url" content="https://devinkott.com">
-        <meta name="twitter:title" content="Devin Kott">
+        <meta name="twitter:title" content="{{SiteTitle}}">
         <meta name="twitter:description" content="{{SiteDescription}}">
 
         <!-- Twitter Meta Tags -->
@@ -48,16 +48,21 @@
         </style>
     </head>
     <body>
+        {{#with Header}}
         <header>
-            <h1>I'm {{firstName}} {{lastName}}, a software developer from {{location}}</h1>
-            <p>{{professionalSummary}}</p>
+            <h1>{{Title}}</h1>
+            <p>{{Summary}}</p>
         </header>
+        {{/with}}
+
         <main>
             <section>
-                <h2>Work</h2>
+                {{#with Work}}
+                <h2>{{SectionTitle}}</h2>
                 <p>
-                    <span>Total Industry Experience:</span> <span id="total-experience"></span> years
+                    <span>{{TotalExp}}</span> <span id="total-experience"></span> {{Years}}
                 </p>
+                {{/with}}
                 {{#each jobs}}
                 <article>
                     <h3>{{title}}, {{company}}</h3>
@@ -76,25 +81,32 @@
                 </article>
                 {{/each}}
             </section>
+
+            {{#with Education}}
             <section>
-                <h2>Education</h2>
+                <h2>{{SectionTitle}}</h2>
                 <ul aria-label="Educational Degrees">
-                    <li>Master of Science in Computer Science, {{schoolName}}, 2021</li>
-                    <li>Bachelor of Science in Computer Science, {{schoolName}}, 2020, Magna Cum Laude</li>
+                    <li>{{Masters}}</li>
+                    <li>{{Bachelors}}</li>
                 </ul>
             </section>
+            {{/with}}
         </main>
+
+        {{#with Footer}}
         <footer role="contentinfo">
             <p>
-                &copy; {{year}} {{firstName}} {{lastName}}
-                <span aria-hidden="true">|</span> Built with <a href="https://handlebarsjs.com/" target="_blank" rel="noopener noreferrer">Handlebars</a>
-                <span aria-hidden="true">|</span> Hosted on <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">AWS</a>
+                &copy; {{YearAndName}}
+                <span aria-hidden="true">|</span> {{BuiltWith}} <a href="https://handlebarsjs.com/" target="_blank" rel="noopener noreferrer">Handlebars</a>
+                <span aria-hidden="true">|</span> {{HostedOn}} <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">AWS</a>
                 <span aria-hidden="true">|</span>
-                <a href="humans.txt" aria-label="View the humans.txt file">humans</a>
+                <a href="humans.txt" aria-label="View the humans.txt file">{{Humans}}</a>
                 <span aria-hidden="true">|</span>
-                <a href="robots.txt" aria-label="View the robots.txt file">robots</a>
+                <a href="robots.txt" aria-label="View the robots.txt file">{{Robots}}</a>
             </p>
         </footer>
+        {{/with}}
+
         <script>
             function calculateJobDuration() {
                 const dateFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short' });
