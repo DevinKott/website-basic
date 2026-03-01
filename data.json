@@ -24,10 +24,17 @@
     "SiteDescription": "Portfolio of Devin Kott, Software Developer",
     "jobs": [
         {
+            "title": "Sr. Software Engineer (Remote)",
+            "company": "Inmar Intelligence",
+            "startDate": "2021-06-02",
+            "endDate": "",
+            "responsibilities": [] 
+        },
+        {
             "title": "Software Engineer (Remote)",
             "company": "Kodak Alaris",
             "startDate": "2021-06-02",
-            "endDate": "",
+            "endDate": "2026-02-02",
             "responsibilities": [
                 "Developer on the technology transformation team, helping modernize existing legacy systems by delivering containerized C# .NET 8.0 microservices designed to run across Linux, Windows, and cloud environments. Owned the development of a scalable, cloud-ready rendering engine utilizing OpenCV for high-performance image processing and photo product creation, replacing legacy imaging code with a modern, robust, maintainable solution. Also led the development of a flexible asset storage service integrating Azure Blob Storage, supporting the broader modernization of product commercialization workflows.",
                 "Served as lead developer on our Next-Gen Kiosk retailer trial, architecting and delivering the Low-Latency Net-to-Retail (LLN2R) device service - a C# .NET 8.0 microservice responsible for reliably receiving and processing cloud-driven fulfillment orders from Azure IoT Hub. Designed the service to ensure resilient order ingestion, validation, and print-pipeline execution. Supported deployment readiness through hands-on system configuration and on-site validation of the first store-bound kiosks ahead of retail rollout.",
