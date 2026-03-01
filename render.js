@@ -27,7 +27,7 @@ async function renderTemplate(templatePath, dataPath, outputPath) {
                 minifyCSS: true,
                 minifyJS: true,
                 processConditionalComments: true,
-                processScripts: ["text/html"],
+
                 removeAttributeQuotes: true,
                 removeComments: true,
                 removeEmptyAttributes: true,
@@ -47,7 +47,7 @@ async function renderTemplate(templatePath, dataPath, outputPath) {
         await fs.writeFile(outputPath, outputHtml);
         console.log(`Successfully generated ${outputPath}`);
     } catch (error) {
-        console.error(`Error: ${error.message}`);
+        console.error(error);
         process.exit(1);
     }
 }
