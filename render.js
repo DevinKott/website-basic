@@ -1,6 +1,6 @@
 const fs = require("fs").promises;
 const Handlebars = require("handlebars");
-const minify = require('html-minifier').minify;
+const { minify } = require('html-minifier-next');
 
 async function renderTemplate(templatePath, dataPath, outputPath) {
     try {
@@ -17,7 +17,7 @@ async function renderTemplate(templatePath, dataPath, outputPath) {
         let outputHtml = template(jsonData);
 
         // Minify
-        outputHtml = minify(
+        outputHtml = await minify(
             outputHtml,
             {
                 collapseBooleanAttributes: true,
@@ -37,7 +37,7 @@ async function renderTemplate(templatePath, dataPath, outputPath) {
                 removeStyleLinkTypeAttributes: true,
                 removeTagWhitespace: true, // Might result in invalid HTML
                 sortAttributes: true,
-                sortClassName: true,
+                sortClassNames: true,
                 trimCustomFragments: true,
                 useShortDoctype: true
             }
