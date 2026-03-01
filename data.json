@@ -1,8 +1,8 @@
 {
     "SiteTitle": "Devin Kott",
     "Header": {
-        "Title": "I'm Devin Kott, a software developer from Denver, Colorado",
-        "Summary": "Software Developer with 7 years of experience designing and developing API-driven services for cloud environments. Proficient in C#, Docker, and Bash scripting with prior experience in Python, JavaScript/Node.js/React, and C++. Passionate about building robust, reliable, and secure software while striving to be adaptable to any situation."
+        "Title": "I'm Devin Kott, a Sr. Software Engineer from Denver, Colorado",
+        "Summary": "Sr. Software Engineer with 7 years of experience designing and developing API-driven services for cloud environments. Proficient in C#, Docker, and Bash scripting with prior experience in Python, JavaScript/Node.js/React, and C++. Passionate about building robust, reliable, and secure software while striving to be adaptable to any situation."
     },
     "Work": {
         "SectionTitle": "Work",
@@ -15,18 +15,18 @@
         "Bachelors": "Bachelor of Science in Computer Science, Rochester Institute of Technology, 2020, Magna Cum Laude"
     },
     "Footer": {
-        "YearAndName": "2025 Devin Kott",
+        "YearAndName": "2026 Devin Kott",
         "BuiltWith": "Built with",
         "HostedOn": "Hosted on",
         "Humans": "humans",
         "Robots": "robots"
     },
-    "SiteDescription": "Portfolio of Devin Kott, Software Developer",
+    "SiteDescription": "Portfolio of Devin Kott, Sr. Software Engineer",
     "jobs": [
         {
             "title": "Sr. Software Engineer (Remote)",
             "company": "Inmar Intelligence",
-            "startDate": "2021-06-02",
+            "startDate": "2026-02-02",
             "endDate": "",
             "responsibilities": [] 
         },
